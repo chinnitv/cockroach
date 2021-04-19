@@ -2,12 +2,9 @@
 
 set -eu
 
-if [ -f ./test.sh ]; then
-  ./test.sh
-fi
-
-if [ "${1:-}" = "shell" ]; then
-  /bin/bash "$@"
+if [ "${1-}" = "shell" ]; then
+  shift
+  exec /bin/sh "$@"
 else
-  /cockroach/cockroach "$@"
+  exec /cockroach/cockroach "$@"
 fi

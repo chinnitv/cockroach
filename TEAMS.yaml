@@ -1,0 +1,61 @@
+# This is a YAML file mapping team aliases from GitHub to
+# metadata about the team.
+# Expected structure is available in pkg/internal/team/team.go.
+
+# Finding triage_column_id:
+#   TriageColumnID is the column id of the project column the team uses to
+#   triage issues. Unfortunately, there appears to be no way to retrieve this
+#   programmatically from the API.
+#
+#   To find the triage column for a project, run the following curl command:
+#     curl -u yourusername:githubaccesstoken -H "Accept: application/vnd.github.inertia-preview+json" \
+#     https://api.github.com/repos/cockroachdb/cockroach/projects
+#
+#   Then, for the project you care about, curl its columns URL, which looks like this:
+#     https://api.github.com/projects/3842382/columns
+#
+#   Find the triage column you want, and pick its ID field.
+#
+#   TODO(otan): make this a tool.
+
+cockroachdb/docs:
+  triage_column_id: 0 # TODO
+cockroachdb/sql-experience:
+  triage_column_id: 9056630
+cockroachdb/sql-schema:
+  triage_column_id: 8946818
+cockroachdb/sql-queries:
+  aliases: [cockroachdb/sql-syntax-prs, cockroachdb/sql-optimizer, cockroachdb/sql-opt-prs, cockroachdb/sqlproxy-prs]
+  triage_column_id: 6837155
+cockroachdb/sql-observability:
+  aliases: [cockroachdb/sql-api-prs]
+  triage_column_id: 0 # TODO
+cockroachdb/kv:
+  triage_column_id: 3550674
+cockroachdb/geospatial:
+  triage_column_id: 9487269
+cockroachdb/dev-inf:
+  triage_column_id: 10210759
+cockroachdb/storage:
+  triage_column_id: 6668367
+cockroachdb/test-eng:
+  triage_column_id: 0 # TODO
+cockroachdb/security:
+  triage_column_id: 0 # TODO
+cockroachdb/bulk-io:
+  aliases: [cockroachdb/bulk-prs]
+  triage_column_id: 3097123
+cockroachdb/cdc:
+  aliases: [cockroachdb/cdc-prs]
+  triage_column_id: 3570120
+cockroachdb/server:
+  aliases: [cockroachdb/cli-prs, cockroachdb/server-prs, cockroachdb/http-api-prs]
+  triage_column_id: 0 # TODO
+cockroachdb/cluster-ui:
+  aliases: [cockroachdb/cluster-ui-prs]
+  triage_column_id: 6598672
+cockroachdb/obs-infra:
+  triage_column_id: 0 # TODO
+cockroachdb/unowned:
+  aliases: [cockroachdb/rfc-prs]
+  triage_column_id: 0 # TODO

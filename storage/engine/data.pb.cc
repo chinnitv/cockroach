@@ -1,1 +1,0 @@
-./cockroach/proto/data.pb.cc
